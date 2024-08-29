@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/admin/dashboard" aria-label="Dashboard">Dashboard</a></li>
+                <li><a href="/admin/addMedication" aria-label="Add Medication">Add Medication</a></li>
+                <li><a href="/admin/logout" aria-label="Logout">Logout</a></li>
+                <li>
+                    <button id="settings_button" tabindex="0" role="button" title="Settings" aria-label="Settings">
+                        ⚙️ <span class="visually-hidden">Settings</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Dashboard Summary</h2>
+            <div id="dashboard-summary" aria-live="polite">
+                <p>Total Patients: <span id="totalPatients">0</span></p>
+                <p>Total Medications: <span id="totalMedications">0</span></p>
+            </div>
+
+            <h2>Add Medication</h2>
+            <form id="medicationForm" aria-labelledby="medicationFormTitle">
+                <h3 id="medicationFormTitle">Medication Form</h3>
+                
+                <label for="name">Medication Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter medication name" aria-required="true">
+
+                <label for="dosage">Dosage:</label>
+                <input type="text" id="dosage" name="dosage" required placeholder="Enter dosage" aria-required="true">
+
+                <label for="frequency">Frequency:</label>
+                <input type="text" id="frequency" name="frequency" required placeholder="Enter frequency" aria-required="true">
+
+                <label for="days">Days (comma separated):</label>
+                <input type="text" id="days" name="days" required placeholder="e.g., Monday, Wednesday" aria-required="true">
+
+                <label for="times">Times (comma separated):</label>
+                <input type="text" id="times" name="times" required placeholder="e.g., 8:00 AM, 2:00 PM" aria-required="true">
+
+                <input type="submit" value="Add Medication">
+            </form>
+
+            <h2>Medications List</h2>
+            <div id="medicationTable" role="table" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
